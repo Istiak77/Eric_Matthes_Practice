@@ -57,7 +57,3 @@ ice_cream_stand1.flavours_desc()
 # restaurant1.total_served(200)
 # restaurant2.total_served(300)
 # restaurant3.total_served(500)
-
-# restaurant1.desc()
-# restaurant2.desc()
-# restaurant3.desc()

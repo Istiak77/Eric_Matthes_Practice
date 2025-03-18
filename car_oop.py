@@ -31,19 +31,29 @@ class Battery:
     def desc_bat(self):
         print(f"Battery Size : {self.battery_size}")
 
+    def upgrade_bat(self):
+        if self.battery_size != 100:
+            self.battery_size = 100
+            print(f"{self.battery_size}")
+        else:
+            print(f"{self.battery_size}")
+
     def range(self):
         if self.battery_size == 40:
-            range = 150
+            return 150
         elif self.battery_size == 65:
-            range = 225
-
-        print(f"This car can go {range} on {self.battery_size} kwh")    
+            return 225
+        elif self.battery_size == 100:
+            return 300
 
 class Ecar(Car):
 
     def __init__(self,make,model,year):
         super().__init__(make,model,year)
         self.battery = Battery()
+
+    def range(self):
+        return self.battery.range()
 
     def refill_tank(self):
         print(f"E cars don't have tanks")
@@ -61,5 +71,6 @@ print(tesla.desc())
 # new_car.update_meter(2000)
 # new_car.read_meter()
 tesla.battery.desc_bat()
-tesla.battery.range()
+tesla.battery.upgrade_bat()
+print(f"Car range: {tesla.range()} miles")
 tesla.refill_tank()
